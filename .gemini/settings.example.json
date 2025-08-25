@@ -1,0 +1,79 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/path/to/your/projects/apply-mobile-next",
+        "/path/to/your/projects/apply-next-mobile-server",
+        "/path/to/your/projects/apply-mobile-next-helm",
+        "/path/to/your/projects/consultingflutterapp",
+        "/path/to/your/projects/consulting-admin-server",
+        "/path/to/your/projects/consulting-service",
+        "/path/to/your/projects/common-helm",
+        "/path/to/your/projects/apply-mobile-analytics-sync",
+        "/path/to/your/projects/crawler-uni-ratio"
+      ]
+    },
+    "git": {
+      "command": "/path/to/your/uvx/executable",
+      "args": [
+        "mcp-server-git",
+        "--repository",
+        "/path/to/your/projects/apply-next-mobile-server",
+        "--repository",
+        "/path/to/your/projects/consulting-admin-server",
+        "--repository",
+        "/path/to/your/projects/consulting-service",
+        "--repository",
+        "/path/to/your/projects/consultingflutterapp",
+        "--repository",
+        "/path/to/your/projects/apply-mobile-analytics-sync",
+        "--repository",
+        "/path/to/your/projects/apply-mobile-next",
+        "--repository",
+        "/path/to/your/projects/crawler-uni-ratio"
+      ]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY"
+      }
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "mcp-atlassian": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "JIRA_URL",
+        "-e",
+        "JIRA_USERNAME",
+        "-e",
+        "JIRA_API_TOKEN",
+        "ghcr.io/sooperset/mcp-atlassian:latest"
+      ],
+      "env": {
+        "JIRA_URL": "https://jinhaksa.atlassian.net",
+        "JIRA_USERNAME": "YOUR_JIRA_USERNAME",
+        "JIRA_API_TOKEN": "YOUR_JIRA_API_TOKEN"
+      }
+    }
+  }
+}

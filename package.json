@@ -1,0 +1,13 @@
+{
+  "name": "git-commit-generator",
+  "version": "1.0.0",
+  "description": "> Jinhak-customized Git commit message generator powered by Gemini AI.",
+  "main": "generate-config.js",
+  "scripts": {
+    "config:generate": "node generate-config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

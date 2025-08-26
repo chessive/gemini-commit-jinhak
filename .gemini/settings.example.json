@@ -74,6 +74,13 @@
         "JIRA_USERNAME": "YOUR_JIRA_USERNAME",
         "JIRA_API_TOKEN": "YOUR_JIRA_API_TOKEN"
       }
+    },
+    "notionApi": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_TOKEN": "YOUR_NOTION_API_TOKEN"
+      }
     }
   }
 }

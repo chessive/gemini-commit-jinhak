@@ -2,7 +2,8 @@
   "secrets": {
     "jira_username": "your_email@example.com",
     "jira_api_token": "YOUR_JIRA_API_TOKEN",
-    "brave_api_key": "YOUR_BRAVE_API_KEY"
+    "brave_api_key": "YOUR_BRAVE_API_KEY",
+    "notion_api_token": "YOUR_NOTION_API_TOKEN"
   },
   "paths": {
     "uvx_executable": "/path/to/your/uvx/executable",

@@ -42,12 +42,13 @@ function generateConfig() {
 
   // 3. Perform replacements
   let output = template
-    .replace('"__FILESYSTEM_ARGS__"', JSON.stringify(filesystemArgs))
-    .replace('"__GIT_ARGS__"', JSON.stringify(gitArgs))
+    .replace("__FILESYSTEM_ARGS__", JSON.stringify(filesystemArgs))
+    .replace("__GIT_ARGS__", JSON.stringify(gitArgs))
     .replace('__UVX_EXECUTABLE_PATH__', values.paths.uvx_executable.replace(/\\/g, '/'))
     .replace('__BRAVE_API_KEY__', values.secrets.brave_api_key)
     .replace('__JIRA_USERNAME__', values.secrets.jira_username)
-    .replace('__JIRA_API_TOKEN__', values.secrets.jira_api_token);
+    .replace('__JIRA_API_TOKEN__', values.secrets.jira_api_token)
+    .replace('__NOTION_API_TOKEN__', values.secrets.notion_api_token);
 
   // 4. Write the final config file
   try {

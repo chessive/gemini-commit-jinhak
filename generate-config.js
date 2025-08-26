@@ -28,7 +28,7 @@ function generateConfig() {
     process.exit(1);
   }
 
-  // 2. Build dynamic arguments for 'filesystem' and 'git'
+  // 2. Build dynamic arguments for 'filesystem', 'git', and 'figma'
   const fullProjectPaths = values.paths.project_names.map(name => 
     path.join(values.paths.projects_base, name).replace(/\\/g, '/') // Ensure forward slashes for cross-platform compatibility
   );
@@ -40,10 +40,18 @@ function generateConfig() {
     gitArgs.push('--repository', projPath);
   });
 
+  const figmaArgs = [
+    '-y',
+    'figma-developer-mcp',
+    `--figma-api-key=${values.secrets.figma_api_key}`,
+    '--stdio',
+  ];
+
   // 3. Perform replacements
   let output = template
-    .replace("__FILESYSTEM_ARGS__", JSON.stringify(filesystemArgs))
-    .replace("__GIT_ARGS__", JSON.stringify(gitArgs))
+    .replace('"__FILESYSTEM_ARGS__"', JSON.stringify(filesystemArgs))
+    .replace('"__GIT_ARGS__"', JSON.stringify(gitArgs))
+    .replace('"__FIGMA_ARGS__"', JSON.stringify(figmaArgs))
     .replace('__UVX_EXECUTABLE_PATH__', values.paths.uvx_executable.replace(/\\/g, '/'))
     .replace('__BRAVE_API_KEY__', values.secrets.brave_api_key)
     .replace('__JIRA_USERNAME__', values.secrets.jira_username)

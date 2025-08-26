@@ -53,6 +53,10 @@
       "env": {
         "NOTION_TOKEN": "__NOTION_API_TOKEN__"
       }
+    },
+    "Framelink Figma MCP": {
+      "command": "npx",
+      "args": "__FIGMA_ARGS__"
     }
   }
 }

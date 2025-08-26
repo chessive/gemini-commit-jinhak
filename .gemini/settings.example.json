@@ -81,6 +81,15 @@
       "env": {
         "NOTION_TOKEN": "YOUR_NOTION_API_TOKEN"
       }
+    },
+    "Framelink Figma MCP": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_FIGMA_API_KEY",
+        "--stdio"
+      ]
     }
   }
 }

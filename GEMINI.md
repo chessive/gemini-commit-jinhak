@@ -259,28 +259,28 @@ chore(config): NODE_ENV 환경 변수명 표준화
 ```
 docs(apply-next-mobile-server): 가상계좌 생성 기능 구현 커밋 메시지 6건 추가
 
-`apply-next-mobile-server` 프로젝트의 가상계좌 생성(`APPLY-667`) 기능 구현에 관련된 커밋 메시지 6건을 기록합니다.
+`apply-next-mobile-server` 프로젝트의 가상계좌 생성(`APPLY-667`) 기능 구현에 관련된 커밋 메시지 6건을 기록함.
 
 **주요 변경사항 요약:**
 
 - **환경변수 및 설정 (`config`)**:
-  - 가상계좌 데이터 암호화를 위한 `VIRTUAL_ACCOUNT_AES_ENCRYPTION_KEY` 환경변수를 추가하고, `env-validation.schema`를 통해 유효성을 검증합니다.
+  - 가상계좌 데이터 암호화를 위한 `VIRTUAL_ACCOUNT_AES_ENCRYPTION_KEY` 환경변수 추가 및 `env-validation.schema`를 통한 유효성 검증.
 
 - **핵심 유틸리티 및 상수 (`jinhak-cash`)**:
-  - 지원하는 9개 은행 코드(`SUPPORTED_BANK_CODES`)를 상수로 정의하고, 코드 유효성을 검증하는 유틸리티를 추가합니다.
-  - 외부 시스템 연동을 위해 PBKDF2 기반의 AES-256-CBC 암호화 유틸리티(`aes-encryption.util.ts`)를 구현합니다.
+  - 지원하는 9개 은행 코드(`SUPPORTED_BANK_CODES`)를 상수로 정의하고, 코드 유효성을 검증하는 유틸리티 추가.
+  - 외부 시스템 연동을 위해 PBKDF2 기반의 AES-256-CBC 암호화 유틸리티(`aes-encryption.util.ts`) 구현.
 
 - **전용 예외 처리 (`exceptions`)**:
-  - 연동 과정에서 발생할 수 있는 6가지 특정 오류(회원 없음, 타임아웃, 암호화 실패 등)에 대한 `ErrorCode` Enum과 커스텀 예외 클래스를 추가하여 오류 상황을 명확하게 처리합니다.
+  - 연동 과정에서 발생할 수 있는 6가지 특정 오류(회원 없음, 타임아웃, 암호화 실패 등)에 대한 `ErrorCode` Enum과 커스텀 예외 클래스를 추가하여 오류 상황을 명확하게 처리함.
 
 - **데이터 모델 및 서비스 확장 (`jinhak-cash`)**:
-  - 외부 API 통신을 위한 `VirtualAccountServerRequest/Response` 인터페이스와 요청 DTO(`CreateVirtualAccountRequestDto`)를 정의하고, 유효성 검증 로직을 추가합니다.
-  - `MemberService`와 `MemberRepository`를 확장하여 사용자 이름을 조회하는 기능을 추가합니다.
+  - 외부 API 통신을 위한 `VirtualAccountServerRequest/Response` 인터페이스와 요청 DTO(`CreateVirtualAccountRequestDto`) 정의 및 유효성 검증 로직 추가.
+  - `MemberService`와 `MemberRepository`를 확장하여 사용자 이름을 조회하는 기능 추가.
 
 - **비즈니스 로직 및 API (`jinhak-cash`)**:
-  - `VirtualAccountService`에 데이터 암호화, 외부 API 호출, 예외 처리를 포함한 가상계좌 생성 핵심 로직을 구현합니다.
-  - `POST /jinhak-cash/virtual-accounts` API 엔드포인트를 신설하고, 상세한 Swagger 문서를 작성하여 API 명세를 구체화합니다.
-  - `Dockerfile`에 관련 환경변수를 추가하여 배포 환경에 반영합니다.
+  - `VirtualAccountService`에 데이터 암호화, 외부 API 호출, 예외 처리를 포함한 가상계좌 생성 핵심 로직 구현.
+  - `POST /jinhak-cash/virtual-accounts` API 엔드포인트 신설 및 상세한 Swagger 문서를 작성하여 API 명세 구체화.
+  - `Dockerfile`에 관련 환경변수를 추가하여 배포 환경에 반영.
 ```
 
 ---

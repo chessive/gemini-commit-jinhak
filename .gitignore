@@ -1,18 +1,15 @@
-# Gemini settings with sensitive data
+# User-specific values
+config/values.json
+
+.DS_Store
+.vscode/
+node_modules/
+
+# Gemini
 .gemini/settings.json
 
 # Local environment configuration
 .env*
 
-# User-specific values
-config/values.json
-
-# macOS specific
-.DS_Store
-
-# Node dependencies
-node_modules
-
-# Build output
-/dist
-/build
+# Commit Messages
+.commit_message/
